@@ -5,6 +5,8 @@ import os
 async def get_datastore() -> DataStore:
     datastore = os.environ.get("DATASTORE").lower()
     assert datastore is not None
+    
+    datastore = datastore.lower()
 
     match datastore:
         case "pinecone":
